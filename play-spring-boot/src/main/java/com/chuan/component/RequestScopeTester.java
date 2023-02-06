@@ -13,9 +13,13 @@ import javax.annotation.PreDestroy;
  */
 @Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 @Component
-public class RequestScopeTestComponent {
-    public RequestScopeTestComponent() {
+public class RequestScopeTester {
+    public RequestScopeTester() {
         System.out.println("This is constructor.");
+    }
+
+    public String saySomething() {
+        return "I'm saying something.";
     }
 
     @PostConstruct
