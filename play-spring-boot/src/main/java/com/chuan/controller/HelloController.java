@@ -1,13 +1,11 @@
 package com.chuan.controller;
 
+import com.chuan.PlaySpringBootApplication;
 import com.chuan.component.RequestScopeTester;
 import com.chuan.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -54,5 +52,15 @@ public class HelloController {
         // 2. 如果以非调试模式运行这条语句，则会发现RequestScopeTester的生命周期方法不会执行。
         // return "something...";
         return requestScopeTester.saySomething(); // 代理对象requestScopeTester的任何一个方法执行，都会导致目标对象初始化相应的Bean
+    }
+
+    @PostMapping("/appContext/start")
+    public void appStart() {
+        PlaySpringBootApplication.applicationContext.start();
+    }
+
+    @PostMapping("/appContext/stop")
+    public void appStop() {
+        PlaySpringBootApplication.applicationContext.stop();
     }
 }
