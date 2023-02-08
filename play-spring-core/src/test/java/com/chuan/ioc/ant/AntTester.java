@@ -1,6 +1,5 @@
 package com.chuan.ioc.ant;
 
-import com.chuan.ioc.ant.IoCAppConfig;
 import com.chuan.ioc.ant.bean.UserServiceWithAware;
 import com.chuan.ioc.ant.bean.UserServiceWithLifecycle;
 import com.chuan.ioc.ant.bean.UserServiceWithLookup;
@@ -52,6 +51,7 @@ public class AntTester {
         applicationContext.start();
         UserServiceWithLifecycle userService = (UserServiceWithLifecycle) applicationContext.getBean(beanName);
         applicationContext.stop();
+        // applicationContext.close();
         IUserDAO userDAO = userService.getUserDAO();
         userDAO.find();
     }
