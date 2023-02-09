@@ -63,4 +63,10 @@ public class HelloController {
     public void appStop() {
         PlaySpringBootApplication.applicationContext.stop();
     }
+
+    @PostMapping("/appContext/refresh")
+    public void appRefresh() {
+        // TODO 为啥容器直接宕掉了
+        PlaySpringBootApplication.applicationContext.refresh();
+    }
 }
