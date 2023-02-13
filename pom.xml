@@ -13,7 +13,7 @@
         <module>play-spring-core</module>
         <module>play-spring-boot</module>
         <module>play-mybatis-plus</module>
-        <module>play-java8</module>
+        <module>play-jdk</module>
         <module>play-json</module>
         <module>play-redis</module>
     </modules>

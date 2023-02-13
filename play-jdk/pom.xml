@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>play-java8</artifactId>
+    <artifactId>play-jdk</artifactId>
     <packaging>jar</packaging>
 
     <properties>
