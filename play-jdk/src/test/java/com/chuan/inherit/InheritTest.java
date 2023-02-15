@@ -28,7 +28,7 @@ public class InheritTest {
         // 子类未覆盖父类方法，因此调用父类方法。然而，在父类方法super.sayEmail()的方法体中，其调用了getEmail()方法
         // 该parent#getEmail()方法被子类覆盖了，因此最终又会调用到子类方法child#getEmail()中
         String childSayEmail = child.sayEmail();
-        Assert.assertTrue(childSayEmail.endsWith("lisi@qq.com"));
         System.out.println(childSayEmail);
+        Assert.assertTrue(childSayEmail.endsWith("lisi@qq.com"));
     }
 }
