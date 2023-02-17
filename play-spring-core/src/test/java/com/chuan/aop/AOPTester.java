@@ -12,8 +12,10 @@ import com.chuan.aop.proxy.jdk.GunDog;
 import com.chuan.aop.proxy.jdk.IDog;
 import net.sf.cglib.core.DebuggingClassWriter;
 import net.sf.cglib.proxy.Enhancer;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
@@ -38,7 +40,9 @@ public class AOPTester {
 
     @Test
     public void testBeanProxy() {
-        Buyer buyer = applicationContext.getBean(Buyer.class);
+        // 代理后的bean已不是原来的类型
+        Assert.assertThrows(NoSuchBeanDefinitionException.class, () -> applicationContext.getBean(Buyer.class));
+        IBuy buyer = applicationContext.getBean(IBuy.class);
         System.out.println(buyer.getClass().getSimpleName());
     }
 
@@ -68,7 +72,8 @@ public class AOPTester {
     // TODO WTF 怎么能嵌套AOP了？？？
     @Test
     public void testCGLibDynamicProxy() {
-        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "C:\\Users\\chuan\\Desktop");
+        String tempDir = System.getProperty("java.io.tmpdir");
+        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, tempDir);
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(LickDog.class);
         enhancer.setCallback(new LickDogMethodInterceptor());
@@ -102,6 +107,6 @@ public class AOPTester {
 
         MixinService mixinService = this.applicationContext.getBean(MixinService.class);
         ((IntroService) mixinService).test();
-        System.out.println(introService == mixinService);
+        Assert.assertSame(introService, mixinService);
     }
 }

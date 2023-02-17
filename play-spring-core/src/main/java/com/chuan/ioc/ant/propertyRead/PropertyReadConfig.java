@@ -1,7 +1,9 @@
-package com.chuan.ioc.ant;
+package com.chuan.ioc.ant.propertyRead;
 
-import com.chuan.ioc.ant.bean.value.UserProperty;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.format.support.DefaultFormattingConversionService;
 
@@ -11,7 +13,7 @@ import org.springframework.format.support.DefaultFormattingConversionService;
 @PropertySource(value = "classpath:prop.properties", encoding="UTF-8")
 @ComponentScan
 @Configuration
-public class IoCAppConfig {
+public class PropertyReadConfig {
 
     @Bean
     public ConversionService conversionService() {

@@ -1,4 +1,4 @@
-package com.chuan.ioc.ant.bean.otherbean;
+package com.chuan.ioc.ant.beanMethod.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,6 +8,6 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public class BeanX {
+public class BeanY {
     private String name;
 }

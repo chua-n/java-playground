@@ -1,7 +1,7 @@
-package com.chuan.ioc.ant.config;
+package com.chuan.ioc.ant.beanMethod;
 
-import com.chuan.ioc.ant.bean.otherbean.BeanY;
-import com.chuan.ioc.ant.bean.otherbean.BeanYY;
+import com.chuan.ioc.ant.beanMethod.bean.BeanY;
+import com.chuan.ioc.ant.beanMethod.bean.BeanYY;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @author xucy-e
  */
 @Component
-public class OtherBeanConfigInComponent {
+public class ComponentBeanConfig {
 
     @Bean
     private BeanY beanY() {

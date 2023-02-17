@@ -1,7 +1,7 @@
 package com.chuan.ioc.xml;
 
-import com.chuan.ioc.bean.IUserDAO;
-import com.chuan.ioc.bean.IUserService;
+import com.chuan.ioc.IUserDAO;
+import com.chuan.ioc.IUserService;
 import com.chuan.ioc.xml.bean.XMLUserService;
 import com.chuan.util.MyPrinter;
 import org.junit.Assert;
@@ -14,7 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 // @RunWith(SpringJUnit4ClassRunner.class)
 // @ContextConfiguration("classpath:ioc.xml")
-public class XmlTester {
+public class XmlIoCTester {
 
     private ClassPathXmlApplicationContext applicationContext;
 
@@ -27,7 +27,7 @@ public class XmlTester {
     }
 
     @Test
-    public void testMultiIOCContainers() {
+    public void testMultiIoCContainers() {
         ClassPathXmlApplicationContext applicationContext1 = new ClassPathXmlApplicationContext("ioc.xml");
         ClassPathXmlApplicationContext applicationContext2 = new ClassPathXmlApplicationContext("ioc.xml");
         Assert.assertNotSame(applicationContext1, applicationContext2);

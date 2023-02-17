@@ -1,6 +1,6 @@
 package com.chuan.ioc.xml.bean;
 
-import com.chuan.ioc.bean.IUserDAO;
+import com.chuan.ioc.IUserDAO;
 
 /**
  * @author xucy-e

@@ -1,6 +1,6 @@
-package com.chuan.ioc.ant.bean;
+package com.chuan.ioc.ant.lifecyfle;
 
-import com.chuan.ioc.bean.IUserDAO;
+import com.chuan.ioc.IUserDAO;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
@@ -9,9 +9,8 @@ import javax.annotation.PreDestroy;
 /**
  * @author xucy-e
  */
-// @Scope("prototype")
 @Repository
-public class UserDAO implements IUserDAO {
+public class UserDAOInLifecyclePackage implements IUserDAO {
     @Override
     public String find() {
         return "123456";

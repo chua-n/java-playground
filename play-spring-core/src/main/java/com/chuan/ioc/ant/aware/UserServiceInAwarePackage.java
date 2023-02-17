@@ -1,7 +1,7 @@
-package com.chuan.ioc.ant.bean;
+package com.chuan.ioc.ant.aware;
 
-import com.chuan.ioc.bean.IUserDAO;
-import com.chuan.ioc.bean.IUserService;
+import com.chuan.ioc.IUserDAO;
+import com.chuan.ioc.IUserService;
 import lombok.Getter;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  */
 @Getter
 @Service
-public class UserServiceWithAware implements IUserService, ApplicationContextAware, BeanNameAware {
+public class UserServiceInAwarePackage implements IUserService, ApplicationContextAware, BeanNameAware {
 
     private ApplicationContext applicationContext;
 

@@ -1,7 +1,7 @@
 package com.chuan.ioc.xml.bean;
 
-import com.chuan.ioc.bean.IUserDAO;
-import com.chuan.ioc.bean.IUserService;
+import com.chuan.ioc.IUserDAO;
+import com.chuan.ioc.IUserService;
 import lombok.Getter;
 
 /**

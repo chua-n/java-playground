@@ -1,15 +1,15 @@
-package com.chuan.ioc.ant.bean.value;
+package com.chuan.ioc.ant.propertyRead;
 
 import lombok.AllArgsConstructor;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 /**
  * @author xucy-e
  */
 @ToString
-@Service
+@Component
 public class UserProperty {
 
     @Value("${user.name:xyz}")

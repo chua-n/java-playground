@@ -1,7 +1,7 @@
-package com.chuan.ioc.ant.bean;
+package com.chuan.ioc.ant.lifecyfle;
 
-import com.chuan.ioc.bean.IUserDAO;
-import com.chuan.ioc.bean.IUserService;
+import com.chuan.ioc.IUserDAO;
+import com.chuan.ioc.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.Lifecycle;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import javax.annotation.PreDestroy;
  * @author xucy-e
  */
 @Service
-public class UserServiceWithLifecycle implements IUserService, Lifecycle {
+public class UserServiceInLifecyclePackage implements IUserService, Lifecycle {
 
     private boolean isRunning = false;
 

@@ -1,6 +1,6 @@
 package com.chuan.ioc.xml.replacer;
 
-import com.chuan.ioc.bean.IUserService;
+import com.chuan.ioc.IUserService;
 import com.chuan.util.MyPrinter;
 import org.springframework.beans.factory.support.MethodReplacer;
 

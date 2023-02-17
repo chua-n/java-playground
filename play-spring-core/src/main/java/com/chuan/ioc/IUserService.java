@@ -1,4 +1,4 @@
-package com.chuan.ioc.bean;
+package com.chuan.ioc;
 
 /**
  * @author xucy-e
