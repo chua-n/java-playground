@@ -1,4 +1,4 @@
-package com.chuan.ioc.ant.propertyRead;
+package com.chuan.ioc.env.propertyRead;
 
 import lombok.AllArgsConstructor;
 import lombok.ToString;

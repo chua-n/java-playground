@@ -22,14 +22,14 @@ public class XmlIoCTester {
 
     @Before
     public void setApplicationContext() {
-        this.applicationContext = new ClassPathXmlApplicationContext("ioc.xml");
+        this.applicationContext = new ClassPathXmlApplicationContext("ioc/xml/ioc.xml");
         this.userService = (XMLUserService) applicationContext.getBean("userServiceWithLookup");
     }
 
     @Test
     public void testMultiIoCContainers() {
-        ClassPathXmlApplicationContext applicationContext1 = new ClassPathXmlApplicationContext("ioc.xml");
-        ClassPathXmlApplicationContext applicationContext2 = new ClassPathXmlApplicationContext("ioc.xml");
+        ClassPathXmlApplicationContext applicationContext1 = new ClassPathXmlApplicationContext("ioc/xml/ioc.xml");
+        ClassPathXmlApplicationContext applicationContext2 = new ClassPathXmlApplicationContext("ioc/xml/ioc.xml");
         Assert.assertNotSame(applicationContext1, applicationContext2);
 
         IUserService userService1 = applicationContext1.getBean(IUserService.class);

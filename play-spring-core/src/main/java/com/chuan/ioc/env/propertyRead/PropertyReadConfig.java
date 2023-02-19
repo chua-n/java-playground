@@ -1,4 +1,4 @@
-package com.chuan.ioc.ant.propertyRead;
+package com.chuan.ioc.env.propertyRead;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,7 +10,7 @@ import org.springframework.format.support.DefaultFormattingConversionService;
 /**
  * @author xucy-e
  */
-@PropertySource(value = "classpath:prop.properties", encoding="UTF-8")
+@PropertySource(value = "classpath:ioc/env/prop.properties", encoding="UTF-8")
 @ComponentScan
 @Configuration
 public class PropertyReadConfig {

@@ -1,5 +1,6 @@
 package com.chuan.ioc.ant;
 
+import com.chuan.ioc.IUserDAO;
 import com.chuan.ioc.ant.autowired.AutowiredConfig;
 import com.chuan.ioc.ant.autowired.UserServiceWithPrivateConstructor;
 import com.chuan.ioc.ant.aware.AwareConfig;
@@ -12,9 +13,6 @@ import com.chuan.ioc.ant.lifecyfle.UserServiceInLifecyclePackage;
 import com.chuan.ioc.ant.lookup.LookupConfig;
 import com.chuan.ioc.ant.lookup.UserServiceInLookupPackage;
 import com.chuan.ioc.ant.postProcessor.PostProcessorConfig;
-import com.chuan.ioc.ant.propertyRead.PropertyReadConfig;
-import com.chuan.ioc.ant.propertyRead.UserProperty;
-import com.chuan.ioc.IUserDAO;
 import com.chuan.util.MyPrinter;
 import org.junit.Assert;
 import org.junit.Test;
@@ -62,13 +60,6 @@ public class AntIoCTester {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AutowiredConfig.class);
         UserServiceWithPrivateConstructor userService = applicationContext.getBean(UserServiceWithPrivateConstructor.class);
         Assert.assertNotEquals(null, userService);
-    }
-
-    @Test
-    public void testPropertyRead() {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(PropertyReadConfig.class);
-        UserProperty userProperty = applicationContext.getBean(UserProperty.class);
-        System.out.println(userProperty);
     }
 
     @Test
