@@ -5,3 +5,7 @@ spring:
     active: test
   config:
     import: optional:configserver:http://localhost:8888
+  cloud:
+    config:
+      label: main
+      name: config-client3,config-client2,${spring.application.name}

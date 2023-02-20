@@ -13,10 +13,14 @@ public class ConfigClient2Application implements InitializingBean {
 
     @Value("${env.profile:default}")
     private String curProfile;
+    @Value("${server.port}")
+    private int port;
 
     @Override
     public void afterPropertiesSet() {
-        System.out.println(curProfile);
+        System.out.println();
+        System.out.printf("curProfile: %s, port: %d\n", curProfile, port);
+        System.out.println();
     }
 
     public static void main(String[] args) {
