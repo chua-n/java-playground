@@ -20,6 +20,7 @@
         <module>play-spring-core</module>
         <module>play-spring-boot</module>
         <module>play-spring-security</module>
+        <module>play-spring-cloud-config</module>
         <module>play-mybatis-plus</module>
         <module>play-jdk</module>
         <module>play-json</module>
