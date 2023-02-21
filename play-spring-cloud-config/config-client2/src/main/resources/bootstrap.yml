@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: config-client2
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: feature/test1

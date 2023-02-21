@@ -24,6 +24,7 @@ public class ConfigClient2Application implements InitializingBean {
     }
 
     public static void main(String[] args) {
+        System.setProperty("spring.cloud.bootstrap.enabled", String.valueOf(true));
         SpringApplication.run(ConfigClient2Application.class, args);
     }
 
