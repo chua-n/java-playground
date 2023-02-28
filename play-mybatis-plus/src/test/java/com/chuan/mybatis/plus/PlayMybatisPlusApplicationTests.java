@@ -4,16 +4,19 @@ import com.chuan.mybatis.plus.common.Gender;
 import com.chuan.mybatis.plus.dao.UserMapper;
 import com.chuan.mybatis.plus.entity.User;
 import com.chuan.mybatis.plus.service.UserService;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@RunWith(SpringRunner.class)
 @SpringBootTest
-class PlayMybatisPlusApplicationTests {
+public class PlayMybatisPlusApplicationTests {
 
     @Autowired
     private UserMapper userMapper;
@@ -25,7 +28,7 @@ class PlayMybatisPlusApplicationTests {
     public void testSelectAll() {
         System.out.println("----- selectAll method test ------");
         List<User> userList = userMapper.selectList(null);
-        Assertions.assertEquals(6, userList.size());
+        Assert.assertEquals(6, userList.size());
         userList.forEach(System.out::println);
     }
 
@@ -33,7 +36,7 @@ class PlayMybatisPlusApplicationTests {
     public void testUserServiceGetById() {
         User byNumber = userService.getById(1);
         User byString = userService.getById("1");
-        Assertions.assertEquals(byNumber, byString);
+        Assert.assertEquals(byNumber, byString);
         System.out.printf("byNumber: %s\nbyString: %s%n", byNumber, byString);
     }
 
