@@ -25,8 +25,8 @@
         <module>play-spring-security</module>
         <module>play-spring-cloud-config</module>
         <module>play-spring-cloud-zookeeper</module>
-        <module>play-mybatis-plus</module>
         <module>play-spring-cloud-nacos</module>
+        <module>play-mybatis-plus</module>
     </modules>
 
     <properties>
