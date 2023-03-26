@@ -1,5 +1,6 @@
 package com.chuan.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.chuan.PlaySpringBootApplication;
 import com.chuan.component.RequestScopeTester;
 import com.chuan.service.HelloService;
@@ -68,5 +69,11 @@ public class HelloController {
     public void appRefresh() {
         // TODO 为啥容器直接宕掉了
         PlaySpringBootApplication.applicationContext.refresh();
+    }
+
+    @PostMapping("/fastjson")
+    public JSONObject testJsonObj(@RequestBody JSONObject jsonObj) {
+        System.out.println(jsonObj);
+        return jsonObj;
     }
 }
