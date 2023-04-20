@@ -12,7 +12,7 @@ public class DebugTest {
      * </ol>
      * 会发现 IDEA 在 new 出 Coordinate 对象后会执行 toString 方法（控制台输出了打印语句），但是 toString 方法里打的断点并不能生效，
      * 同时 IDEA 给出了一个提示：<blockquote>Skipped breakpoint at com.chuan.debug.Coordinate:27 because it happened inside debugger evaluation</blockquote>
-     * 但是，如果不以调试模式运行，在不会执行 Coordinate 对象的 toString 方法，控制台不存在输出语句。
+     * 但是，如果不以调试模式运行，则不会执行 Coordinate 对象的 toString 方法，控制台不存在输出语句。
      * <p/>
      * 这说明，在调试模式下：
      * <ol>
