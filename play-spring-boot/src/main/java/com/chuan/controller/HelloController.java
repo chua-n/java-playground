@@ -41,6 +41,16 @@ public class HelloController {
         return str;
     }
 
+    @GetMapping("/thread/1")
+    public String echoThread1() {
+        return Thread.currentThread().getName();
+    }
+
+    @GetMapping("/thread/2")
+    public String echoThread2() {
+        return Thread.currentThread().getName();
+    }
+
     @GetMapping("/controllerAdvice/modelAttribute")
     public String testModelAttribute(Model model) {
         return (String) model.getAttribute("userName");
