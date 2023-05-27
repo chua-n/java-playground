@@ -1,7 +1,5 @@
-package com.chuan.ioc.ant.beanMethod;
+package com.chuan.ioc.ant.beanMethod.bean.x;
 
-import com.chuan.ioc.ant.beanMethod.bean.BeanX;
-import com.chuan.ioc.ant.beanMethod.bean.BeanXX;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,14 +7,13 @@ import org.springframework.context.annotation.Configuration;
  * @author xucy-e
  */
 @Configuration
-public class ConfigurationBeanConfig {
+public class XConfig {
     @Bean
     public BeanX beanX() {
         return new BeanX("ZhangSan");
     }
 
-    @Bean
-    public BeanXX beanXX() {
+    public BeanXX getBeanXX() {
         return new BeanXX(this.beanX(), this.beanX());
     }
 

@@ -6,8 +6,10 @@ import com.chuan.ioc.ant.autowired.UserServiceWithPrivateConstructor;
 import com.chuan.ioc.ant.aware.AwareConfig;
 import com.chuan.ioc.ant.aware.UserServiceInAwarePackage;
 import com.chuan.ioc.ant.beanMethod.BeanConfig;
-import com.chuan.ioc.ant.beanMethod.bean.BeanXX;
-import com.chuan.ioc.ant.beanMethod.bean.BeanYY;
+import com.chuan.ioc.ant.beanMethod.bean.x.BeanXX;
+import com.chuan.ioc.ant.beanMethod.bean.x.XConfig;
+import com.chuan.ioc.ant.beanMethod.bean.y.BeanYY;
+import com.chuan.ioc.ant.beanMethod.bean.y.YConfig;
 import com.chuan.ioc.ant.lifecyfle.LifecycleConfig;
 import com.chuan.ioc.ant.lifecyfle.UserServiceInLifecyclePackage;
 import com.chuan.ioc.ant.lookup.LookupConfig;
@@ -65,10 +67,18 @@ public class AntIoCTester {
     @Test
     public void testBeanMethod() {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfig.class);
-        BeanXX beanXX = applicationContext.getBean(BeanXX.class);
-        BeanYY beanYY = applicationContext.getBean(BeanYY.class);
+
+        // @Configuration中的@Bean方法会被Spring代理，两个beanX是从IoC容器里取的，所以两个beanX相同
+        XConfig xConfig = applicationContext.getBean(XConfig.class);
+        BeanXX beanXX = xConfig.getBeanXX();
         Assert.assertSame(beanXX.getBeanX1(), beanXX.getBeanX2());
+        Assert.assertNotNull(beanXX.getBeanX1().getBeanO());
+
+        // @Component中的@Bean方法不会被Spring代理，两个beanY就是new出来的，所以两个beanY不同
+        YConfig yConfig = applicationContext.getBean(YConfig.class);
+        BeanYY beanYY = yConfig.getBeanYY();
         Assert.assertNotSame(beanYY.getBeanY1(), beanYY.getBeanY2());
+        Assert.assertNull(beanYY.getBeanY1().getBeanO());
     }
 
     @Test

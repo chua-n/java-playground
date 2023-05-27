@@ -1,7 +1,5 @@
-package com.chuan.ioc.ant.beanMethod;
+package com.chuan.ioc.ant.beanMethod.bean.y;
 
-import com.chuan.ioc.ant.beanMethod.bean.BeanY;
-import com.chuan.ioc.ant.beanMethod.bean.BeanYY;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -9,15 +7,14 @@ import org.springframework.stereotype.Component;
  * @author xucy-e
  */
 @Component
-public class ComponentBeanConfig {
+public class YConfig {
 
     @Bean
     private BeanY beanY() {
         return new BeanY("ZhangSan");
     }
 
-    @Bean
-    private BeanYY beanYY() {
+    public BeanYY getBeanYY() {
         return new BeanYY(this.beanY(), this.beanY());
     }
 }

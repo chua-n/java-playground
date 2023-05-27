@@ -1,4 +1,4 @@
-package com.chuan.ioc.ant.beanMethod.bean;
+package com.chuan.ioc.ant.beanMethod.bean.y;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
