@@ -27,6 +27,7 @@
         <module>play-spring-cloud-zookeeper</module>
         <module>play-spring-cloud-nacos</module>
         <module>play-mybatis-plus</module>
+        <module>play-spring-cloud-stream</module>
     </modules>
 
     <properties>

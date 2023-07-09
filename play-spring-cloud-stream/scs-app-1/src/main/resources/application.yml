@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    stream:
+      bindings:
+        supplyPerson-out-0:
+          destination:
+            person
+          producer:
+            poller:
+              cron: 0 0/3 * * * ?
