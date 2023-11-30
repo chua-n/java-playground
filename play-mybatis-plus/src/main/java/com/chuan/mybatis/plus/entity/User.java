@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.chuan.mybatis.plus.common.Gender;
+import com.chuan.mybatis.plus.common.XianDistrict;
 import lombok.*;
 
 /**
@@ -31,4 +32,6 @@ public class User extends BaseEntity {
     private String userQRCode;
 
     private String introduction;
+
+    private XianDistrict district;
 }
