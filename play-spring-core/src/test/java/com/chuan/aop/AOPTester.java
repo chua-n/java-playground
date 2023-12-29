@@ -51,10 +51,10 @@ public class AOPTester {
         final GunDog gunDog = new GunDog(); //目标对象
         Advice advice = new Advice(); // 增强对象
         // 调用代理对象的任何方法，实质执行的都是invoke方法
-        IDog proxy = (IDog) Proxy.newProxyInstance(
+        IDog proxyDog = (IDog) Proxy.newProxyInstance(
                 gunDog.getClass().getClassLoader(), // 目标对象的类加载器
                 gunDog.getClass().getInterfaces(), // 目标对象相同的接口字节码对象数组
-                (proxy1, method, args) -> { // InvocationHandler
+                (proxy, method, args) -> { // InvocationHandler
                     advice.before();
                     Object res = method.invoke(gunDog, args); // 注意触发方法时传入的主调是目标对象`gunDog`
                     advice.afterReturning();
@@ -64,9 +64,9 @@ public class AOPTester {
         System.out.println("----------------------目标对象的info方法调用结果----------------------");
         gunDog.info();
         System.out.println("----------------------代理对象的info方法调用结果----------------------");
-        proxy.info();
+        proxyDog.info();
         System.out.println("----------------------单独调用代理对象的speed方法----------------------");
-        proxy.speed();
+        proxyDog.speed();
     }
 
     // TODO WTF 怎么能嵌套AOP了？？？
