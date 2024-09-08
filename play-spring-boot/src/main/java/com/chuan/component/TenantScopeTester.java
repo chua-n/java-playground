@@ -1,9 +1,7 @@
 package com.chuan.component;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
+import com.chuan.scope.TenantSpecific;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.WebApplicationContext;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -11,10 +9,10 @@ import javax.annotation.PreDestroy;
 /**
  * @author xucy-e
  */
-@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
+@TenantSpecific
 @Component
-public class RequestScopeTester {
-    public RequestScopeTester() {
+public class TenantScopeTester {
+    public TenantScopeTester() {
         System.out.println(this.getClass().getSimpleName() + "#constructor");
     }
 
