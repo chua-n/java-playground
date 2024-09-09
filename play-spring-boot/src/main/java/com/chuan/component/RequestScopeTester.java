@@ -14,6 +14,10 @@ import javax.annotation.PreDestroy;
 @Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 @Component
 public class RequestScopeTester {
+    public String something = "I am something";
+
+    public static String staticSomething = "I am static something";
+
     public RequestScopeTester() {
         System.out.println(this.getClass().getSimpleName() + "#constructor");
     }
