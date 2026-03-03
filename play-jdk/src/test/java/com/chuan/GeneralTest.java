@@ -1,10 +1,13 @@
 package com.chuan;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class GeneralTest {
     @Test
@@ -32,5 +35,16 @@ public class GeneralTest {
         for (BigDecimal zero : zeros) {
             System.out.println(zero.hashCode());
         }
+    }
+
+    @Test
+    public void testCollectionOf() {
+        Set<String> set = Set.of("a", "b");
+        Assert.assertTrue(set.contains("a"));
+        Assert.assertThrows(NullPointerException.class, () -> set.contains(null));
+
+        List<String> list = List.of("a", "b");
+        Assert.assertFalse(list.contains("c"));
+        Assert.assertThrows(NullPointerException.class, () -> list.contains(null));
     }
 }
